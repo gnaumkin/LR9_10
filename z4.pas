@@ -4,7 +4,7 @@ const
 var
   array1: array[1..size] of Integer;
   array2: array[1..size] of Integer;
-  sum1, sum2, i: Integer;
+  sum1, sum2, i: Integer; // фактические, глобальные, по ссылке
 begin
   Randomize;
   for i := 1 to size do
@@ -18,7 +18,7 @@ begin
   WriteLn('Массив 2:');
   for i := 1 to size do
     WriteLn(array2[i]);
-  sum1 := 0;
+  sum1 := 0;  // локальные
   sum2 := 0;
   for i := 1 to SIZE do
   begin
@@ -30,7 +30,7 @@ begin
   if sum1 < sum2 then
   begin
     WriteLn('Умножаем элементы 1 массива на 10:');
-    for i := 1 to SIZE do
+    for i := 1 to size do
     begin
       array1[i] := array1[i] * 10;
       WriteLn(array1[i]);
@@ -42,7 +42,7 @@ begin
     for i := 1 to SIZE do
     begin
       array2[i] := array2[i] * 10;
-      WriteLn(array2[i]);
+      WriteLn(array2[i]); // фактические
     end;
   end;
 end.
